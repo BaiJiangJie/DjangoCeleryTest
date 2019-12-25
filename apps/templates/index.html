@@ -3,11 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>DjangoCeleryTest</title>
-</head>
-<body>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            left: 50%;
+            margin: 100px 0 0 -300px;
+        }
 
-<div>
-    <h3>API</h3>
+    </style>
+</head>
+{#<body>#}
+<body bgcolor="#000000">
+
+<div class="box">
+    <h3 style="color: white">API</h3>
     <p><a href="{% url 'api-dream01:hello' %}">API dream01 Hello</a></p>
 </div>
 
