@@ -25,12 +25,14 @@ SECRET_KEY = 'h+$1()wtjy(j37g0r-l925oo^bwtrc5d3&p@)4p6r*#w&&g+j8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'dream01',
+    'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -54,7 +56,7 @@ ROOT_URLCONF = 'DjangoCeleryTest.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -75,8 +77,13 @@ WSGI_APPLICATION = 'DjangoCeleryTest.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'django_celery_test',
+        'USER': 'root',
+        'PASSWORD': 'root',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
+
     }
 }
 
